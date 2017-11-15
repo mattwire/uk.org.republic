@@ -15,8 +15,14 @@ CRM.$(function() {
     }
   }
 
-  CRM.$('input[name="payment_processor_id"]').change(function() {
-    alterPaypalDisplay();
+  // Re-prep form when we've loaded a new payproc
+  CRM.$(document).ajaxComplete(function( event, xhr, settings ) {
+    // /civicrm/payment/form? occurs when a payproc is selected on page
+    // /civicrm/contact/view/participant occurs when payproc is first loaded on event credit card payment
+    if ((settings.url.match("/civicrm/payment/form?"))
+      || (settings.url.match("/civicrm/contact/view/participant?"))) {
+      alterPaypalDisplay();
+    }
   });
 
   alterPaypalDisplay();
