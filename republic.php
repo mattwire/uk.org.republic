@@ -127,8 +127,11 @@ function republic_civicrm_buildForm($formName, &$form) {
   switch ($formName) {
     case 'CRM_Contribute_Form_Contribution_Main':
       Civi::resources()
-        ->addStyleFile(E::LONG_NAME, 'css/contribution.css')
         ->addScriptFile(E::LONG_NAME, 'js/contribution.js');
+    case 'CRM_Contribute_Form_Contribution_Confirm':
+    case 'CRM_Contribute_Form_Contribution_ThankYou':
+      Civi::resources()
+        ->addStyleFile(E::LONG_NAME, 'css/contribution.css');
       break;
   }
 }

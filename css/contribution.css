@@ -7,7 +7,7 @@ div.paypal_button_info-section
 }
 
 /* Adjust contribution page width */
-.page-civicrm-contribute .no-sidebars #region-content {
+.page-civicrm-contribute.no-sidebars #region-content {
   width: 100%;
 }
 
