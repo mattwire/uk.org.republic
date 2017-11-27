@@ -127,7 +127,7 @@ function republic_civicrm_buildForm($formName, &$form) {
   switch ($formName) {
     case 'CRM_Contribute_Form_Contribution_Main':
       Civi::resources()
-        ->addStyleFile(E::LONG_NAME, 'css/hidepaypal.css')
+        ->addStyleFile(E::LONG_NAME, 'css/contribution.css')
         ->addScriptFile(E::LONG_NAME, 'js/contribution.js');
       break;
   }

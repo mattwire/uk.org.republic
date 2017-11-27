@@ -1,7 +1,0 @@
-/* Hide the paypal button from Paypal Pro */
-div._qf_Main_upload_express-section,
-div._qf_Payment_upload_express-section,
-div.paypal_button_info-section
-{
-  display: none;
-}
