@@ -15,6 +15,13 @@ CRM.$(function() {
     }
   }
 
+  function forceRecurIfEnabled() {
+    CRM.$('input#is_recur').prop('checked', false);
+    CRM.$('input#is_recur').trigger('click');
+    CRM.$('input#is_recur').hide();
+    CRM.$('.is_recur-section').hide();
+  }
+
   // Re-prep form when we've loaded a new payproc
   CRM.$(document).ajaxComplete(function( event, xhr, settings ) {
     // /civicrm/payment/form? occurs when a payproc is selected on page
@@ -26,5 +33,6 @@ CRM.$(function() {
   });
 
   alterPaypalDisplay();
+  forceRecurIfEnabled();
 
 });
